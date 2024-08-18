@@ -1,19 +1,16 @@
 package com.example.myhazardgameapp.fragments
 
-import android.content.Context
+import BottomSheetDialog
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.lists.GameListViewAdapter
 import com.example.myhazardgameapp.lists.GamesList
@@ -48,7 +45,9 @@ class MainActivityFragment : Fragment() {
         }
 
         sortButton.setOnClickListener {
-            gameListViewAdapter.sort { item1, item2 -> item1.compereToAscending(item1, item2) }
+            //gameListViewAdapter.sort { item1, item2 -> item1.compereToAscending(item1, item2) }
+            val bottomSheet = BottomSheetDialog()
+            bottomSheet.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
         }
     }
 }
