@@ -9,11 +9,15 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleObserver
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.lists.GameListViewAdapter
 import com.example.myhazardgameapp.lists.GamesList
+import kotlinx.coroutines.android.awaitFrame
 
 class MainActivityFragment : Fragment() {
 
@@ -39,15 +43,16 @@ class MainActivityFragment : Fragment() {
 
         val gameListViewAdapter = GameListViewAdapter(requireActivity() , gameList)
         gameListView.adapter = gameListViewAdapter
+        gameListViewAdapter.sort { item1, item2 -> item1.compereAlfabetical(item1, item2) }
 
         searchView.doOnTextChanged { text, _, _, _ ->
             gameListViewAdapter.filter.filter(text)
         }
 
         sortButton.setOnClickListener {
-            //gameListViewAdapter.sort { item1, item2 -> item1.compereToAscending(item1, item2) }
             val bottomSheet = BottomSheetDialog()
             bottomSheet.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
+            bottomSheet.setAdapter(gameListViewAdapter)
         }
     }
 }

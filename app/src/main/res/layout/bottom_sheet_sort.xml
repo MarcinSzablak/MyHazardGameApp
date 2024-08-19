@@ -3,28 +3,64 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:gravity="left"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/border_green_100">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a Modal BottomSheet"
-        android:textSize="25sp" />
+        android:text="Sortuj"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:layout_margin="10dp"
-        android:id="@+id/algo_button"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/main_fragment_sort_radiogroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share this Algorithm" />
+        android:background="@drawable/border_30"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp">
 
-    <Button
-        android:layout_margin="10dp"
-        android:id="@+id/course_button"
-        android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/main_fragment_sort_radio_alfabetical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nazwa: A-Z"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/main_fragment_sort_radio_not_alfabetical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nazwa: Z-A"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/main_fragment_sort_radio_more_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Więcej graczy"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/main_fragment_sort_radio_less_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mniej graczy"
+            android:textColor="@color/black"/>
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/main_fragment_sort_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share this Course" />
+        android:text="Sortuj"
+        android:background="@drawable/border_50"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
