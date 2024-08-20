@@ -2,8 +2,15 @@ package com.example.myhazardgameapp.lists
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.graphics.Interpolator
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.BounceInterpolator
+import android.view.animation.CycleInterpolator
+import android.view.animation.LinearInterpolator
+import android.view.animation.ScaleAnimation
 import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.ImageView
@@ -37,6 +44,18 @@ class GameListViewAdapter(
         titleView.text = game.title
         imageView.setImageResource(game.image)
         playersView.text = game.playerCount
+
+        rowView.setOnClickListener { event -> }
+
+        rowView.setOnClickListener {
+            val buttonClick = ScaleAnimation(
+                1f, 0.95f,
+                1f, 0.95f,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f)
+            buttonClick.duration = 300
+            rowView.startAnimation(buttonClick)
+        }
 
         return rowView
     }
