@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.SortedList
 import com.example.myhazardgameapp.R
 import java.util.Comparator
@@ -72,6 +73,11 @@ class GameListViewAdapter(
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 filteredGames = results?.values as Array<Game>
+
+                if(filteredGames.isEmpty()){
+                    val appToast = AppToast.showToast(context, "No results found")
+                }
+
                 notifyDataSetChanged()
             }
         }

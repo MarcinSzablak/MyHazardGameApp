@@ -29,28 +29,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nazwa: A-Z"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:checked="true"
+            />
 
         <RadioButton
             android:id="@+id/main_fragment_sort_radio_not_alfabetical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nazwa: Z-A"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginBottom="5dp"/>
 
         <RadioButton
             android:id="@+id/main_fragment_sort_radio_more_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Więcej graczy"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginBottom="5dp"/>
 
         <RadioButton
             android:id="@+id/main_fragment_sort_radio_less_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mniej graczy"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:theme="@style/MyRadioButton"
+            android:layout_marginBottom="5dp"/>
 
     </RadioGroup>
     <TextView

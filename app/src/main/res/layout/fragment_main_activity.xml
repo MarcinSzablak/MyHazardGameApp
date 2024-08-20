@@ -34,6 +34,7 @@
                 android:drawableStart="@drawable/baseline_search_24" />
 
             <ImageButton
+                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/baseline_settings_24" />
@@ -55,7 +56,7 @@
                 app:drawableStartCompat="@drawable/baseline_filter_alt_24"
                 android:layout_weight="1"/>
             <Space
-                android:layout_weight="1"
+                android:layout_weight="20"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"/>
             <TextView
@@ -68,11 +69,8 @@
                 android:background="@drawable/border_30"
                 android:gravity="center"
                 app:drawableStartCompat="@drawable/baseline_swap_vert_24"
-                android:layout_weight="1"/>
-            <Space
-                android:layout_weight="20"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <ListView

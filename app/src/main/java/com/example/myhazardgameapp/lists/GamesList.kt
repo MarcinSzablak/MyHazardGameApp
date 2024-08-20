@@ -4,10 +4,10 @@ import com.example.myhazardgameapp.R
 
 object GamesList {
     public val games = arrayOf<Game>(
-        Game("Poker", R.drawable.card,"2+"),
-        Game("Pasjans", R.drawable.card,"1+"),
-        Game("Mahjong", R.drawable.reddragon,"4"),
-        Game("Cho-han", R.drawable.dice,"3+"),
+        Game("Poker", R.raw.card,"2+"),
+        Game("Pasjans", R.raw.card,"1+"),
+        Game("Mahjong", R.raw.reddragon,"4"),
+        Game("Cho-han", R.raw.dice,"3+"),
         )
 }
 
