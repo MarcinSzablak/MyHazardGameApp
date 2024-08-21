@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
@@ -38,6 +41,7 @@ class MainActivityFragment : Fragment() {
         val gameListView = view.findViewById<ListView>(R.id.main_fragment_game_select_list)
         val searchView = view.findViewById<EditText>(R.id.main_fragment_search_bar)
         val sortButton = view.findViewById<TextView>(R.id.main_fragment_sort)
+        val settingsButton = view.findViewById<ImageButton>(R.id.main_fragment_settings)
 
         val gameListViewAdapter = GameListViewAdapter(requireActivity() , gameList)
         gameListView.adapter = gameListViewAdapter
@@ -54,6 +58,24 @@ class MainActivityFragment : Fragment() {
             val bottomSheet = BottomSheetDialog()
             bottomSheet.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
             bottomSheet.setAdapter(gameListViewAdapter)
+        }
+
+        settingsButton.setOnClickListener {
+            val buttonClick = ScaleAnimation(
+                1f, 0.7f,
+                1f, 0.7f,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+            )
+            buttonClick.duration = 100
+            settingsButton.startAnimation(buttonClick)
+
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            fragmentTransaction?.setCustomAnimations(
+                R.anim.slide_in_right,
+                R.anim.slide_out_right
+            )?.replace(R.id.main_fragment_container, SettingsFragment())
+                ?.commit()
         }
     }
 }

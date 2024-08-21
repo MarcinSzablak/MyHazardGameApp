@@ -34,7 +34,8 @@
                 android:drawableStart="@drawable/baseline_search_24" />
 
             <ImageButton
-                android:layout_marginLeft="10dp"
+                android:id="@+id/main_fragment_settings"
+                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/baseline_settings_24" />
