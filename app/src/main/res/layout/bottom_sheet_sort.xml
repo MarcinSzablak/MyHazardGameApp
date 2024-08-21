@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="left"
+    android:gravity="start"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@drawable/border_green_100">
@@ -17,7 +17,7 @@
         android:layout_marginBottom="10dp"/>
 
     <RadioGroup
-        android:id="@+id/main_fragment_sort_radiogroup"
+        android:id="@+id/bottom_sheet_sort_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border_30"
@@ -25,7 +25,7 @@
         android:padding="5dp">
 
         <RadioButton
-            android:id="@+id/main_fragment_sort_radio_alfabetical"
+            android:id="@+id/bottom_sheet_sort_radio_alfabetical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nazwa: A-Z"
@@ -37,7 +37,7 @@
             />
 
         <RadioButton
-            android:id="@+id/main_fragment_sort_radio_not_alfabetical"
+            android:id="@+id/bottom_sheet_sort_radio_not_alfabetical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nazwa: Z-A"
@@ -46,7 +46,7 @@
             android:layout_marginBottom="5dp"/>
 
         <RadioButton
-            android:id="@+id/main_fragment_sort_radio_more_people"
+            android:id="@+id/bottom_sheet_sort_radio_more_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Więcej graczy"
@@ -55,7 +55,7 @@
             android:layout_marginBottom="5dp"/>
 
         <RadioButton
-            android:id="@+id/main_fragment_sort_radio_less_people"
+            android:id="@+id/bottom_sheet_radio_less_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mniej graczy"
@@ -65,13 +65,14 @@
 
     </RadioGroup>
     <TextView
-        android:id="@+id/main_fragment_sort_button"
+        android:id="@+id/bottom_sheet_sort_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sortuj"
         android:background="@drawable/border_50"
         android:padding="10dp"
         android:gravity="center"
+        android:textSize="20sp"
         android:textColor="@color/black"/>
 
 </LinearLayout>

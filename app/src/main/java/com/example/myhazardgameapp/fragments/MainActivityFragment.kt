@@ -1,6 +1,6 @@
 package com.example.myhazardgameapp.fragments
 
-import BottomSheetDialog
+import BottomSheetSort
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ListView
@@ -16,6 +17,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.lists.BottomSheetFiltr
 import com.example.myhazardgameapp.lists.GameListViewAdapter
 import com.example.myhazardgameapp.lists.GamesList
 
@@ -40,6 +42,7 @@ class MainActivityFragment : Fragment() {
 
         val gameListView = view.findViewById<ListView>(R.id.main_fragment_game_select_list)
         val searchView = view.findViewById<EditText>(R.id.main_fragment_search_bar)
+        val filterButton = view.findViewById<TextView>(R.id.main_fragment_filtr)
         val sortButton = view.findViewById<TextView>(R.id.main_fragment_sort)
         val settingsButton = view.findViewById<ImageButton>(R.id.main_fragment_settings)
 
@@ -49,15 +52,23 @@ class MainActivityFragment : Fragment() {
 
         searchView.doOnTextChanged { text, _, _, _ ->
             gameListViewAdapter.filter.filter(text)
+
         }
 
-        val buttonClick = AlphaAnimation(1f, 0.6f)
+        val buttonClick = AlphaAnimation(1f, 0.8f)
+
+        filterButton.setOnClickListener {
+            filterButton.startAnimation(buttonClick)
+            val bottomSheetFiltr = BottomSheetFiltr()
+            bottomSheetFiltr.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
+            bottomSheetFiltr.setAdapter(gameListViewAdapter)
+        }
 
         sortButton.setOnClickListener {
             sortButton.startAnimation(buttonClick)
-            val bottomSheet = BottomSheetDialog()
-            bottomSheet.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
-            bottomSheet.setAdapter(gameListViewAdapter)
+            val bottomSheetSort = BottomSheetSort()
+            bottomSheetSort.show(FragmentManager.findFragmentManager(view), "ModalBottomSheet")
+            bottomSheetSort.setAdapter(gameListViewAdapter)
         }
 
         settingsButton.setOnClickListener {

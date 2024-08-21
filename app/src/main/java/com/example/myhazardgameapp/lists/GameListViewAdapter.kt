@@ -12,11 +12,12 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.GameSelectedFragment
+import com.example.myhazardgameapp.other.AppToast
 
 class GameListViewAdapter(
     private val context: FragmentActivity,
     private val games: Array<Game>
-) : ArrayAdapter<Game>(context, R.layout.fragment_main_activity_list_view, games) {
+) : ArrayAdapter<Game>(context, R.layout.fragment_main_activity_game_list, games) {
 
     private var filteredGames: Array<Game> = games
 
@@ -24,7 +25,7 @@ class GameListViewAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = context.layoutInflater
         val rowView = inflater.inflate(
-            R.layout.fragment_main_activity_list_view,
+            R.layout.fragment_main_activity_game_list,
             null, true
         )
 
@@ -38,9 +39,7 @@ class GameListViewAdapter(
         imageView.setImageResource(game.image)
         playersView.text = game.playerCount
 
-        rowView.setOnClickListener { event -> }
-
-        rowView.setOnClickListener(function(rowView))
+        //rowView.setOnClickListener(function(rowView))
 
         return rowView
     }
@@ -87,6 +86,35 @@ class GameListViewAdapter(
                 } else {
                     val filteredList = games.filter {
                         it.title.contains(constraint, ignoreCase = true)
+                    }
+                    filterResults.values = filteredList.toTypedArray()
+                    filterResults.count = filteredList.size
+                }
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredGames = results?.values as Array<Game>
+
+                if(filteredGames.isEmpty()){
+                    val appToast = AppToast.showToast(context, "No results found")
+                }
+
+                notifyDataSetChanged()
+            }
+        }
+    }
+    fun getFilterByPlayers(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filterResults = FilterResults()
+                if (constraint.isNullOrEmpty()) {
+                    filterResults.values = games
+                    filterResults.count = games.size
+                } else {
+                    val filteredList = games.filter {
+                        it.playerCount.contains(constraint, ignoreCase = true)
                     }
                     filterResults.values = filteredList.toTypedArray()
                     filterResults.count = filteredList.size

@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.lists
+package com.example.myhazardgameapp.other
 
 import android.content.Context
 import android.widget.Toast

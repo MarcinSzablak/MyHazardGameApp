@@ -14,14 +14,15 @@ import com.example.myhazardgameapp.lists.SortStatus
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class BottomSheetDialog : BottomSheetDialogFragment() {
+class BottomSheetSort : BottomSheetDialogFragment() {
     lateinit var adapter: ArrayAdapter<Game>
+    lateinit var chosenStatus: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         val v: View = inflater.inflate(
             R.layout.bottom_sheet_sort,
             container, false
@@ -34,8 +35,8 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val sortButton = view.findViewById<TextView>(R.id.main_fragment_sort_button)
-        val radioGroup = view.findViewById<RadioGroup>(R.id.main_fragment_sort_radiogroup)
+        val sortButton = view.findViewById<TextView>(R.id.bottom_sheet_sort_button)
+        val radioGroup = view.findViewById<RadioGroup>(R.id.bottom_sheet_sort_radiogroup)
 
         var radioButton = view.findViewById<RadioButton>(radioGroup!!.checkedRadioButtonId)
         if(SortStatus.id == 0){
@@ -45,27 +46,26 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             radioButton = group.findViewById<RadioButton>(checkedId)
-
-            SortStatus.status = radioButton.text
-            SortStatus.id = radioButton.id
+            chosenStatus = radioButton.text.toString()
         }
 
         sortButton.setOnClickListener {
-            if(SortStatus.status == "Nazwa: A-Z"){
+            if(chosenStatus == "Nazwa: A-Z"){
                 adapter.sort { game, game2 -> game.compereAlfabetical(game, game2) }
             }
-            if(SortStatus.status == "Nazwa: Z-A"){
+            if(chosenStatus == "Nazwa: Z-A"){
                 //yee it works just changing places of compered games
                 adapter.sort { game, game2 -> game.compereAlfabetical(game2, game) }
             }
-            if(SortStatus.status == "Więcej graczy"){
-                //yee it works just changing places of compered games
+            if(chosenStatus == "Więcej graczy"){
                 adapter.sort { game, game2 -> game.comperePlayers(game2, game) }
             }
-            if(SortStatus.status == "Mniej graczy"){
-                //yee it works just changing places of compered games
+            if(chosenStatus == "Mniej graczy"){
                 adapter.sort { game, game2 -> game.comperePlayers(game, game2) }
             }
+
+            SortStatus.status = radioButton.text
+            SortStatus.id = radioButton.id
 
             dismiss()
         }
