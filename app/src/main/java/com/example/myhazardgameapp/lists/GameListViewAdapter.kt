@@ -1,27 +1,20 @@
 package com.example.myhazardgameapp.lists
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.graphics.Interpolator
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import android.view.animation.BounceInterpolator
-import android.view.animation.CycleInterpolator
-import android.view.animation.LinearInterpolator
 import android.view.animation.ScaleAnimation
 import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.recyclerview.widget.SortedList
+import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
-import java.util.Comparator
+import com.example.myhazardgameapp.fragments.GameSelectedFragment
 
 class GameListViewAdapter(
-    private val context: Activity,
+    private val context: FragmentActivity,
     private val games: Array<Game>
 ) : ArrayAdapter<Game>(context, R.layout.fragment_main_activity_list_view, games) {
 
@@ -47,17 +40,29 @@ class GameListViewAdapter(
 
         rowView.setOnClickListener { event -> }
 
-        rowView.setOnClickListener {
-            val buttonClick = ScaleAnimation(
-                1f, 0.95f,
-                1f, 0.95f,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f)
-            buttonClick.duration = 300
-            rowView.startAnimation(buttonClick)
-        }
+        rowView.setOnClickListener(function(rowView))
 
         return rowView
+    }
+
+    private fun function(rowView: View): (View) -> Unit = {
+        val buttonClick = ScaleAnimation(
+            1f, 0.95f,
+            1f, 0.95f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f
+        )
+        buttonClick.duration = 100
+        rowView.startAnimation(buttonClick)
+
+        var fragmentTransaction = context.supportFragmentManager.beginTransaction()
+        fragmentTransaction
+            .setCustomAnimations(
+                R.anim.slide_in_right,
+                R.anim.slide_out_right
+            )
+            .replace(R.id.main_fragment_container, GameSelectedFragment())
+            .commit()
     }
 
     override fun getCount(): Int {
