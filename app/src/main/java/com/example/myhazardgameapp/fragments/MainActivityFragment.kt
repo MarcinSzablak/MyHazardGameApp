@@ -52,7 +52,6 @@ class MainActivityFragment : Fragment() {
 
         searchView.doOnTextChanged { text, _, _, _ ->
             gameListViewAdapter.filter.filter(text)
-
         }
 
         val buttonClick = AlphaAnimation(1f, 0.8f)

@@ -4,16 +4,18 @@ import com.example.myhazardgameapp.R
 
 object GamesList {
     public val games = arrayOf<Game>(
-        Game("Poker", R.raw.card,"2+"),
-        Game("Pasjans", R.raw.card,"1+"),
-        Game("Mahjong", R.raw.reddragon,"4"),
-        Game("Cho-han", R.raw.dice,"3+"),
+        Game("Poker", R.raw.card,"card","2+"),
+        Game("Pasjans", R.raw.card,"card","1+"),
+        Game("Mahjong", R.raw.reddragon,"mahjong","4"),
+        Game("Cho-han", R.raw.dice,"dice","3+"),
         )
+    public val gamesTypes = arrayOf<String>("all", "card", "dice", "mahjong")
 }
 
 class Game(
     public val title: String,
     public val image: Int,
+    public val type: String,
     public val playerCount: String)
 {
     fun compereAlfabetical(item1: Game, item2: Game): Int {
