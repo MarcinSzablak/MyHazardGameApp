@@ -2,6 +2,7 @@ package com.example.myhazardgameapp.fragments
 
 import BottomSheetSort
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -50,8 +52,8 @@ class MainActivityFragment : Fragment() {
         gameListView.adapter = gameListViewAdapter
         gameListViewAdapter.sort { item1, item2 -> item1.compereAlfabetical(item1, item2) }
 
-        searchView.doOnTextChanged { text, _, _, _ ->
-            gameListViewAdapter.filter.filter(text)
+        searchView.doOnTextChanged { text, _, before, _ ->
+            gameListViewAdapter.getFilterByTitle(before).filter(text)
         }
 
         val buttonClick = AlphaAnimation(1f, 0.8f)

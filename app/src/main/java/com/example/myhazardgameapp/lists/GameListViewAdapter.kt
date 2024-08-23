@@ -67,7 +67,7 @@ class GameListViewAdapter(
         return position.toLong()
     }
 
-    override fun getFilter(): Filter {
+    fun getFilterByTitle(before: Int): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val filterResults = FilterResults()
@@ -84,7 +84,14 @@ class GameListViewAdapter(
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                applyFilters()
+                filteredGames = filteredByTitle.intersect(filteredByPlayers.asIterable())
+                    .intersect(filteredByType.asIterable()).toTypedArray()
+
+                if (filteredGames.isEmpty() && before == 0) {
+                    AppToast.showToast(context, "No results found")
+                }
+
+                notifyDataSetChanged()
             }
         }
     }
