@@ -6,11 +6,10 @@ import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.lists.Game
-import com.example.myhazardgameapp.lists.GameListViewAdapter
-import com.example.myhazardgameapp.lists.SortStatus
+import com.example.myhazardgameapp.mainSelectionList.Game
+import com.example.myhazardgameapp.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.mainSelectionList.SortStatus
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 

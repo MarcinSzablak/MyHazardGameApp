@@ -2,26 +2,23 @@ package com.example.myhazardgameapp.fragments
 
 import BottomSheetSort
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
-import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.lists.BottomSheetFiltr
-import com.example.myhazardgameapp.lists.GameListViewAdapter
-import com.example.myhazardgameapp.lists.GamesList
+import com.example.myhazardgameapp.mainSelectionList.BottomSheetFiltr
+import com.example.myhazardgameapp.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.mainSelectionList.GamesList
 
 
 class MainActivityFragment : Fragment() {

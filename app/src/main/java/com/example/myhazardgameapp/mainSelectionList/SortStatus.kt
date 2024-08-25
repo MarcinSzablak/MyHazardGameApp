@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.lists
+package com.example.myhazardgameapp.mainSelectionList
 
 object SortStatus {
     public var id: Int = 0

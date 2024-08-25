@@ -1,17 +1,19 @@
-package com.example.myhazardgameapp.lists
+package com.example.myhazardgameapp.mainSelectionList
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
 import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.fragments.GameSelectedFragment
 import com.example.myhazardgameapp.other.AppToast
+import com.example.myhazardgameapp.other.GameSelectedChangeSupport
 
 class GameListViewAdapter(
     private val context: FragmentActivity,
@@ -25,6 +27,7 @@ class GameListViewAdapter(
 
     @SuppressLint("ViewHolder", "InflateParams")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
         val inflater = context.layoutInflater
         val rowView = inflater.inflate(
             R.layout.fragment_main_activity_game_list,
@@ -36,6 +39,26 @@ class GameListViewAdapter(
         val playersView = rowView.findViewById<TextView>(R.id.game_list_view_players)
 
         val game = filteredGames[position]
+
+        rowView.setOnClickListener {
+            val buttonClick = ScaleAnimation(
+                1f, 0.9f,
+                1f, 0.9f,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+            )
+            buttonClick.duration = 200
+            rowView.startAnimation(buttonClick)
+
+            GameSelectedChangeSupport.SelectedGame = filteredGames[position]
+
+            val fragmentTransaction = context.supportFragmentManager.beginTransaction()
+            fragmentTransaction.setCustomAnimations(
+                R.anim.slide_in_right,
+                R.anim.slide_out_right
+            ).replace(R.id.main_fragment_container , GameSelectedFragment())
+                .commit()
+        }
 
         titleView.text = game.title
         imageView.setImageResource(game.image)

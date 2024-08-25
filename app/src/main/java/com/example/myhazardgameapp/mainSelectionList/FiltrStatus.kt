@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.lists
+package com.example.myhazardgameapp.mainSelectionList
 
 object FiltrStatus {
     public var playerNumberMin: Int = 1

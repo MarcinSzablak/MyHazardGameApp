@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.lists
+package com.example.myhazardgameapp.mainSelectionList
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.example.myhazardgameapp.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import org.w3c.dom.Text
 
 class BottomSheetFiltr: BottomSheetDialogFragment() {
     private lateinit var adapter: GameListViewAdapter
