@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.mainSelectionList
+package com.example.myhazardgameapp.fragments.mainSelectionList
 
 import android.annotation.SuppressLint
 import android.view.View
@@ -13,7 +13,8 @@ import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.GameSelectedFragment
 import com.example.myhazardgameapp.other.AppToast
-import com.example.myhazardgameapp.other.GameSelectedChangeSupport
+import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
+import com.example.myhazardgameapp.other.Game
 
 class GameListViewAdapter(
     private val context: FragmentActivity,
@@ -50,7 +51,7 @@ class GameListViewAdapter(
             buttonClick.duration = 200
             rowView.startAnimation(buttonClick)
 
-            GameSelectedChangeSupport.SelectedGame = filteredGames[position]
+            SelectedGameChangeSupport.SelectedGame = filteredGames[position]
 
             val fragmentTransaction = context.supportFragmentManager.beginTransaction()
             fragmentTransaction.setCustomAnimations(

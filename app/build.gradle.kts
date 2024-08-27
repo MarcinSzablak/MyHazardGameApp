@@ -33,6 +33,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    sourceSets {
+        getByName("main") {
+            res {
+                srcDirs(
+                    "src\\main\\res\\layouts\\gameSelectionList",
+                    "src\\main\\res\\layouts\\bottomSheets",
+                    "src\\main\\res", "src\\main\\res", "src\\main\\res\\layouts\\other",
+                    "src\\main\\res",
+                    "src\\main\\res\\layouts\\gameSelected",
+                )
+            }
+        }
+    }
 }
 
 dependencies {

@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameListAdapter
 
 class GameSelectedListFragment : Fragment() {
 
@@ -19,7 +19,6 @@ class GameSelectedListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_game_selected_list, container, false)
     }
 
@@ -28,5 +27,8 @@ class GameSelectedListFragment : Fragment() {
 
         val listView = view.findViewById<ListView>(R.id.game_selected_list_listview)
 
+        val array = arrayOf("aa", "a")
+
+        listView.adapter = SelectedGameListAdapter(requireActivity(), array)
     }
 }

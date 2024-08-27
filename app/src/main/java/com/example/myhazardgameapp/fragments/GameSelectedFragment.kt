@@ -3,14 +3,10 @@ package com.example.myhazardgameapp.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.ScaleAnimation
-import androidx.fragment.app.FragmentContainer
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.other.GameSelectedChangeSupport
+import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.google.android.material.appbar.MaterialToolbar
 
 class GameSelectedFragment : Fragment() {
@@ -36,7 +32,7 @@ class GameSelectedFragment : Fragment() {
                 .commit()
         }
 
-        gameSelectedMenu.title = GameSelectedChangeSupport.SelectedGame.title
+        gameSelectedMenu.title = SelectedGameChangeSupport.SelectedGame.title
 
         gameSelectedMenu.setNavigationOnClickListener {
             val fragmentTransaction = fragmentManager?.beginTransaction()

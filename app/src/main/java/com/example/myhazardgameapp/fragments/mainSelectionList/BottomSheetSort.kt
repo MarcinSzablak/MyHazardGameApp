@@ -7,9 +7,9 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.mainSelectionList.Game
-import com.example.myhazardgameapp.mainSelectionList.GameListViewAdapter
-import com.example.myhazardgameapp.mainSelectionList.SortStatus
+import com.example.myhazardgameapp.other.Game
+import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.fragments.mainSelectionList.SortStatus
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 

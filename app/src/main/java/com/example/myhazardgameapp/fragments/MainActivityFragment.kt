@@ -16,9 +16,9 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.mainSelectionList.BottomSheetFiltr
-import com.example.myhazardgameapp.mainSelectionList.GameListViewAdapter
-import com.example.myhazardgameapp.mainSelectionList.GamesList
+import com.example.myhazardgameapp.fragments.mainSelectionList.BottomSheetFiltr
+import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.other.GamesList
 
 
 class MainActivityFragment : Fragment() {
