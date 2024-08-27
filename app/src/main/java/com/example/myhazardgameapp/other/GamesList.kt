@@ -1,4 +1,4 @@
-package com.example.myhazardgameapp.mainSelectionList
+package com.example.myhazardgameapp.other
 
 import com.example.myhazardgameapp.R
 
@@ -16,7 +16,10 @@ class Game(
     public val title: String,
     public val image: Int,
     public val type: String,
-    public val playerCount: String)
+    public val playerCount: String,
+    public val howToPlayContent: String = "",
+    //public val toolsArray: Array<>
+)
 {
     fun compereAlfabetical(item1: Game, item2: Game): Int {
         val title1 = item1.title
@@ -31,3 +34,8 @@ class Game(
         return compareValues(playerCount1, playerCount2)
     }
 }
+
+class Tool(
+    public val title: String,
+    public val fragment: Int = 0,
+){}
