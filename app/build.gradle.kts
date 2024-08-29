@@ -42,6 +42,12 @@ android {
                     "src\\main\\res", "src\\main\\res", "src\\main\\res\\layouts\\other",
                     "src\\main\\res",
                     "src\\main\\res\\layouts\\gameSelected",
+                    "src\\main\\res",
+                    "src\\main\\res\\drawables",
+                    "src\\main\\res",
+                    "src\\main\\res\\drawables\\icons",
+                    "src\\main\\res",
+                    "src\\main\\res\\drawables\\borders",
                 )
             }
         }

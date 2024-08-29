@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameListAdapter
 
 class GameSelectedListFragment : Fragment() {
@@ -27,8 +28,7 @@ class GameSelectedListFragment : Fragment() {
 
         val listView = view.findViewById<ListView>(R.id.game_selected_list_listview)
 
-        val array = arrayOf("aa", "a")
-
-        listView.adapter = SelectedGameListAdapter(requireActivity(), array)
+        listView.adapter = SelectedGameListAdapter(requireActivity(),
+            SelectedGameChangeSupport.SelectedGame.toolsArray)
     }
 }

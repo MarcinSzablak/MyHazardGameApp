@@ -1,6 +1,9 @@
 package com.example.myhazardgameapp.other
 
+import androidx.fragment.app.Fragment
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.fragments.HowToPlay
+import com.example.myhazardgameapp.fragments.Test
 
 object GamesList {
     public val games = arrayOf<Game>(
@@ -17,8 +20,10 @@ class Game(
     public val image: Int,
     public val type: String,
     public val playerCount: String,
-    public val howToPlayContent: String = "",
-    //public val toolsArray: Array<>
+    public val toolsArray: Array<Tool> = arrayOf<Tool>(
+        Tool("How to play", HowToPlay()),
+        Tool("test", Test())
+    )
 )
 {
     fun compereAlfabetical(item1: Game, item2: Game): Int {
@@ -37,5 +42,5 @@ class Game(
 
 class Tool(
     public val title: String,
-    public val fragment: Int = 0,
+    public val fragment: Fragment,
 ){}

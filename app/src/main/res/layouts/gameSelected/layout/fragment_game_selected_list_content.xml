@@ -2,11 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="15dp"
+    android:background="@drawable/border_50">
     <TextView
         android:id="@+id/test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="test"
-        android:textSize="26sp"/>
+        android:textAlignment="textStart"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        tools:text="test"/>
 </LinearLayout>
