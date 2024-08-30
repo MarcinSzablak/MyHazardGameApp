@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.GameSelectedListFragment">
+    tools:context=".fragments.GameSelectedListFragment"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@color/green">
     <ListView
         android:id="@+id/game_selected_list_listview"
         android:layout_width="match_parent"

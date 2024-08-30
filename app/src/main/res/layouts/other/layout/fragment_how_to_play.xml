@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HowToPlay">
-
+    tools:context=".fragments.HowToPlay"
+    android:background="@color/green"
+    android:clickable="true"
+    android:focusable="true"
+    >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="How to play" />
 
 </FrameLayout>

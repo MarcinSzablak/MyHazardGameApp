@@ -5,7 +5,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myhazardgameapp.fragments.GameSelectedListFragment
 import com.example.myhazardgameapp.fragments.MainActivityFragment
+import com.example.myhazardgameapp.other.FragmentStack
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         if (savedInstanceState == null){
+            FragmentStack.mainStack.push(MainActivityFragment())
+
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_fragment_container, MainActivityFragment())
                 .commit()

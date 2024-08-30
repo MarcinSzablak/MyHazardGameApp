@@ -21,8 +21,8 @@ class Game(
     public val type: String,
     public val playerCount: String,
     public val toolsArray: Array<Tool> = arrayOf<Tool>(
-        Tool("How to play", HowToPlay()),
-        Tool("test", Test())
+        HowToPlay("How to play", HowToPlay(), "aaaaaa"),
+        GameTool("test", Test())
     )
 )
 {
@@ -40,7 +40,19 @@ class Game(
     }
 }
 
-class Tool(
+abstract class Tool(
     public val title: String,
     public val fragment: Fragment,
-){}
+)
+
+class GameTool(
+    title: String,
+    fragment: Fragment,
+): Tool(title, fragment)
+
+
+class HowToPlay(
+    title: String,
+    fragment: Fragment,
+    public val content: String
+): Tool(title, fragment)

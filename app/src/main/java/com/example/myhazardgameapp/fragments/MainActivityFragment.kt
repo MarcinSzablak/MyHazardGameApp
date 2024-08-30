@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.mainSelectionList.BottomSheetFiltr
 import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.other.FragmentStack
 import com.example.myhazardgameapp.other.GamesList
 
 
@@ -36,6 +37,8 @@ class MainActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        FragmentStack.gameSelectedStack.push(GameSelectedListFragment())
 
         val gameList = GamesList.games
 

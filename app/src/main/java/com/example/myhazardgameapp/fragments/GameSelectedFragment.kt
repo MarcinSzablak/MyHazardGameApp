@@ -1,12 +1,14 @@
 package com.example.myhazardgameapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
+import com.example.myhazardgameapp.other.FragmentStack
 import com.google.android.material.appbar.MaterialToolbar
 
 class GameSelectedFragment : Fragment() {
@@ -26,21 +28,30 @@ class GameSelectedFragment : Fragment() {
 
         val gameSelectedMenu = view.findViewById<MaterialToolbar>(R.id.game_selected_menu)
 
-        if (savedInstanceState == null){
-            childFragmentManager.beginTransaction()
-                .replace(R.id.game_selected_fragment_container, GameSelectedListFragment())
-                .commit()
-        }
+        childFragmentManager.beginTransaction()
+            .replace(R.id.game_selected_fragment_container, FragmentStack.gameSelectedStack.peek())
+            .commit()
 
         gameSelectedMenu.title = SelectedGameChangeSupport.SelectedGame.title
 
         gameSelectedMenu.setNavigationOnClickListener {
             val fragmentTransaction = fragmentManager?.beginTransaction()
-            fragmentTransaction?.setCustomAnimations(
-                R.anim.slide_in_left,
-                R.anim.slide_out_left
-            )?.replace(R.id.main_fragment_container, MainActivityFragment())
-                ?.commit()
+            if (FragmentStack.gameSelectedStack.peek() is GameSelectedListFragment){
+                FragmentStack.mainStack.pop()
+                FragmentStack.gameSelectedStack.pop()
+                fragmentTransaction?.setCustomAnimations(
+                    R.anim.slide_in_left,
+                    R.anim.slide_out_left
+                )?.replace(R.id.main_fragment_container, FragmentStack.mainStack.peek())
+                    ?.commit()
+            } else{
+                FragmentStack.gameSelectedStack.pop()
+                fragmentTransaction?.setCustomAnimations(
+                    R.anim.slide_in_left,
+                    R.anim.slide_out_left
+                )?.replace(R.id.game_selected_fragment_container, FragmentStack.gameSelectedStack.peek())
+                    ?.commit()
+            }
         }
 
         gameSelectedMenu.setOnMenuItemClickListener { menuItem ->
