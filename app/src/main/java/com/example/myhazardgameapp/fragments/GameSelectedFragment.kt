@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.example.myhazardgameapp.other.FragmentStack
@@ -28,6 +29,8 @@ class GameSelectedFragment : Fragment() {
 
         val gameSelectedMenu = view.findViewById<MaterialToolbar>(R.id.game_selected_menu)
 
+
+        //set up starting fragment depending which was last
         if (FragmentStack.gameSelectedStack.peek().id == 0){
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.game_selected_fragment_container,

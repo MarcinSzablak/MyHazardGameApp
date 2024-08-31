@@ -4,14 +4,36 @@ import androidx.fragment.app.Fragment
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.HowToPlay
 import com.example.myhazardgameapp.fragments.Test
+import com.example.myhazardgameapp.fragments.toolsFragments.ChohanCalculatorFragment
 
 object GamesList {
     public val games = arrayOf<Game>(
-        Game("Poker", R.raw.card,"card","2+"),
-        Game("Pasjans", R.raw.card,"card","1+"),
-        Game("Mahjong", R.raw.reddragon,"mahjong","4"),
-        Game("Cho-han", R.raw.dice,"dice","3+"),
+        Game("Poker", R.raw.card,"card","2+",
+            arrayOf<Tool>(
+                HowToPlay("How to play", HowToPlay(), "aaaaaa"),
+                GameTool("test", Test())
+                )
+            ),
+        Game("Pasjans", R.raw.card,"card","1+",
+            arrayOf<Tool>(
+                HowToPlay("How to play", HowToPlay(), "aaaaaa"),
+                GameTool("test", Test())
+                )
+            ),
+        Game("Mahjong", R.raw.reddragon,"mahjong","4",
+            arrayOf<Tool>(
+                HowToPlay("How to play", HowToPlay(), "aaaaaa"),
+                GameTool("test", Test())
+                )
+            ),
+        Game("Cho-han", R.raw.dice,"dice","3+",
+            arrayOf<Tool>(
+                HowToPlay("How to play", HowToPlay(), "aaaaaa"),
+                GameTool("Calculator", ChohanCalculatorFragment())
+                )
+            ),
         )
+
     public val gamesTypes = arrayOf<String>("all", "card", "dice", "mahjong")
 }
 
@@ -20,10 +42,7 @@ class Game(
     public val image: Int,
     public val type: String,
     public val playerCount: String,
-    public val toolsArray: Array<Tool> = arrayOf<Tool>(
-        HowToPlay("How to play", HowToPlay(), "aaaaaa"),
-        GameTool("test", Test())
-    )
+    public val toolsArray: Array<Tool> = arrayOf<Tool>()
 )
 {
     fun compereAlfabetical(item1: Game, item2: Game): Int {

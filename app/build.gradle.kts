@@ -48,6 +48,8 @@ android {
                     "src\\main\\res\\drawables\\icons",
                     "src\\main\\res",
                     "src\\main\\res\\drawables\\borders",
+                    "src\\main\\res",
+                    "src\\main\\res\\layouts\\toolsFragments",
                 )
             }
         }
