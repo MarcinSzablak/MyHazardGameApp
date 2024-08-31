@@ -8,4 +8,5 @@ import java.util.Stack
 object FragmentStack {
     var mainStack: Stack<Fragment> = Stack()
     var gameSelectedStack: Stack<Fragment> = Stack()
+    lateinit var currentGameSelectedStack: Fragment
 }

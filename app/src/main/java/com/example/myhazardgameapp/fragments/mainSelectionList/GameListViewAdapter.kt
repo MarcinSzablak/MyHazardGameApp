@@ -58,10 +58,11 @@ class GameListViewAdapter(
             FragmentStack.mainStack.push(GameSelectedFragment())
 
             val fragmentTransaction = context.supportFragmentManager.beginTransaction()
-            fragmentTransaction.setCustomAnimations(
-                R.anim.slide_in_right,
-                R.anim.slide_out_right
-            ).replace(R.id.main_fragment_container , GameSelectedFragment())
+            fragmentTransaction
+                .setCustomAnimations(
+                    R.anim.slide_in_right,
+                    R.anim.slide_out_right)
+                .replace(R.id.main_fragment_container , GameSelectedFragment())
                 .commit()
         }
 

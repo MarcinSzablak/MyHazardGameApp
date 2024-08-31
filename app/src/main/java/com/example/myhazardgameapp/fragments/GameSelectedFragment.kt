@@ -28,9 +28,17 @@ class GameSelectedFragment : Fragment() {
 
         val gameSelectedMenu = view.findViewById<MaterialToolbar>(R.id.game_selected_menu)
 
-        childFragmentManager.beginTransaction()
-            .replace(R.id.game_selected_fragment_container, FragmentStack.gameSelectedStack.peek())
-            .commit()
+        if (FragmentStack.gameSelectedStack.peek().id == 0){
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.game_selected_fragment_container,
+                    FragmentStack.gameSelectedStack.peek())
+                ?.commit()
+        } else{
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.game_selected_fragment_container,
+                    FragmentStack.currentGameSelectedStack)
+                ?.commit()
+        }
 
         gameSelectedMenu.title = SelectedGameChangeSupport.SelectedGame.title
 
@@ -39,17 +47,20 @@ class GameSelectedFragment : Fragment() {
             if (FragmentStack.gameSelectedStack.peek() is GameSelectedListFragment){
                 FragmentStack.mainStack.pop()
                 FragmentStack.gameSelectedStack.pop()
-                fragmentTransaction?.setCustomAnimations(
-                    R.anim.slide_in_left,
-                    R.anim.slide_out_left
-                )?.replace(R.id.main_fragment_container, FragmentStack.mainStack.peek())
+                fragmentTransaction
+                    ?.setCustomAnimations(
+                        R.anim.slide_in_left,
+                        R.anim.slide_out_left)
+                    ?.replace(R.id.main_fragment_container, FragmentStack.mainStack.peek())
                     ?.commit()
             } else{
                 FragmentStack.gameSelectedStack.pop()
-                fragmentTransaction?.setCustomAnimations(
-                    R.anim.slide_in_left,
-                    R.anim.slide_out_left
-                )?.replace(R.id.game_selected_fragment_container, FragmentStack.gameSelectedStack.peek())
+                fragmentTransaction
+                    ?.setCustomAnimations(
+                        R.anim.slide_in_left,
+                        R.anim.slide_out_left)
+                    ?.replace(R.id.game_selected_fragment_container,
+                    FragmentStack.gameSelectedStack.peek())
                     ?.commit()
             }
         }
@@ -58,10 +69,11 @@ class GameSelectedFragment : Fragment() {
             when( menuItem.itemId ){
                 R.id.game_selected_menu_settings ->{
                     val fragmentTransaction = fragmentManager?.beginTransaction()
-                    fragmentTransaction?.setCustomAnimations(
-                        R.anim.slide_in_right,
-                        R.anim.slide_out_right
-                    )?.replace(R.id.main_fragment_container, SettingsFragment())
+                    fragmentTransaction
+                        ?.setCustomAnimations(
+                            R.anim.slide_in_right,
+                            R.anim.slide_out_right)
+                        ?.replace(R.id.main_fragment_container, SettingsFragment())
                         ?.commit()
                     true
                 }else ->{

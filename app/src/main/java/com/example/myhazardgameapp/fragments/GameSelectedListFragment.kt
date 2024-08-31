@@ -9,6 +9,7 @@ import android.widget.ListView
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameListAdapter
+import com.example.myhazardgameapp.other.FragmentStack
 
 class GameSelectedListFragment : Fragment() {
 
@@ -25,6 +26,8 @@ class GameSelectedListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        FragmentStack.currentGameSelectedStack = GameSelectedListFragment()
 
         val listView = view.findViewById<ListView>(R.id.game_selected_list_listview)
 
