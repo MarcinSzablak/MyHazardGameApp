@@ -19,7 +19,7 @@ import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.mainSelectionList.BottomSheetFiltr
 import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
 import com.example.myhazardgameapp.other.FragmentStack
-import com.example.myhazardgameapp.other.GamesList
+import com.example.myhazardgameapp.other.gamesFiles.GamesList
 
 
 class MainActivityFragment : Fragment() {

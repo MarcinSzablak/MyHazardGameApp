@@ -13,7 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.other.GamesList
+import com.example.myhazardgameapp.other.gamesFiles.GamesList
+import com.example.myhazardgameapp.other.gamesFiles.GamesType
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomSheetFiltr: BottomSheetDialogFragment() {
@@ -51,7 +52,7 @@ class BottomSheetFiltr: BottomSheetDialogFragment() {
             }
         }
 
-        val spinnerContent = GamesList.gamesTypes
+        val spinnerContent = GamesType.gamesTypes
 
         if(FiltrStatus.type == ""){
             FiltrStatus.type = spinnerContent[0]
@@ -61,7 +62,7 @@ class BottomSheetFiltr: BottomSheetDialogFragment() {
             R.layout.bottom_sheet_spinner_item, spinnerContent)
         spinner.adapter = spinnerAdapter
 
-        spinner.setSelection(GamesList.gamesTypes.indexOf(FiltrStatus.type))
+        spinner.setSelection(GamesType.gamesTypes.indexOf(FiltrStatus.type))
 
         spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {

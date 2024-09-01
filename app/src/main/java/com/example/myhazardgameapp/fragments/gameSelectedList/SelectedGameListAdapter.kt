@@ -1,20 +1,16 @@
 package com.example.myhazardgameapp.fragments.gameSelectedList
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.fragments.GameSelectedFragment
-import com.example.myhazardgameapp.fragments.GameSelectedListFragment
 import com.example.myhazardgameapp.other.FragmentStack
-import com.example.myhazardgameapp.other.Tool
+import com.example.myhazardgameapp.other.gamesFiles.Tool
 
 class SelectedGameListAdapter (
     private val context: FragmentActivity,
@@ -29,7 +25,6 @@ class SelectedGameListAdapter (
         )
 
         val textView = rowView.findViewById<TextView>(R.id.test)
-
         textView.text = tools[position].title
 
         rowView.setOnClickListener {

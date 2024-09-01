@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.other.FragmentStack
-import com.example.myhazardgameapp.other.HowToPlay
 
 class HowToPlay : Fragment() {
 

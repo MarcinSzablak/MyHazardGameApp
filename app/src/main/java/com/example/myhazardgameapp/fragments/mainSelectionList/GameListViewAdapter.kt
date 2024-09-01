@@ -12,11 +12,10 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.GameSelectedFragment
-import com.example.myhazardgameapp.fragments.GameSelectedListFragment
 import com.example.myhazardgameapp.other.AppToast
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.example.myhazardgameapp.other.FragmentStack
-import com.example.myhazardgameapp.other.Game
+import com.example.myhazardgameapp.other.gamesFiles.Game
 
 class GameListViewAdapter(
     private val context: FragmentActivity,
