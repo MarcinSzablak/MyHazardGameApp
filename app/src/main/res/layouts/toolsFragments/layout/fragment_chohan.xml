@@ -46,16 +46,31 @@
                 android:layout_marginEnd="18dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:textAlignment="center"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="cho"
-                    android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:padding="10dp"
                     android:background="@drawable/border_red_70"
-                    android:padding="10dp" />
-
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cho"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                         />
+                    <TextView
+                        android:id="@+id/cho_points"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0pt"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
                 <ListView
                     android:id="@+id/cho_list_view"
                     android:layout_width="match_parent"
@@ -73,15 +88,30 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:textAlignment="center"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="han"
-                    android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:orientation="vertical"
                     android:background="@drawable/border_blue_70"
-                    android:padding="10dp" />
+                    android:padding="10dp" >
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="han"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"/>
+                    <TextView
+                        android:id="@+id/han_points"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0pt"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
+
 
                 <ListView
                     android:id="@+id/han_list_view"

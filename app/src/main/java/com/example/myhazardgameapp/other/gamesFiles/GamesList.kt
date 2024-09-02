@@ -29,7 +29,7 @@ object GamesList {
         Game("Cho-han", R.raw.dice,"dice","3+",
             arrayOf<Tool>(
                 Tool("How to play", HowToPlay()),
-                Tool("Calculator", ChohanCalculatorFragment())
+                Tool("Calculator", ChohanCalculatorFragment(), R.drawable.baseline_calculate_24)
                 )
             ),
         )

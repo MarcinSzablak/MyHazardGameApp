@@ -24,8 +24,11 @@ class SelectedGameListAdapter (
             null, true
         )
 
+        val tool = tools[position]
+
         val textView = rowView.findViewById<TextView>(R.id.test)
-        textView.text = tools[position].title
+        textView.text = tool.title
+        textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, tool.icon ,0)
 
         rowView.setOnClickListener {
             val buttonClick = ScaleAnimation(
@@ -37,7 +40,7 @@ class SelectedGameListAdapter (
             buttonClick.duration = 200
             rowView.startAnimation(buttonClick)
 
-            FragmentStack.gameSelectedStack.push(tools[position].fragment)
+            FragmentStack.gameSelectedStack.push(tool.fragment)
 
             val fragmentTransaction = context.supportFragmentManager.beginTransaction()
             fragmentTransaction
@@ -45,7 +48,7 @@ class SelectedGameListAdapter (
                     R.anim.slide_in_right,
                     R.anim.slide_out_right
                 )
-                .replace(R.id.game_selected_fragment_container , tools[position].fragment)
+                .replace(R.id.game_selected_fragment_container , tool.fragment)
                 .commit()
         }
 

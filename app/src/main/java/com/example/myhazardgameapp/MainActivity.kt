@@ -5,7 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.myhazardgameapp.fragments.GameSelectedListFragment
 import com.example.myhazardgameapp.fragments.MainActivityFragment
 import com.example.myhazardgameapp.other.FragmentStack
 
@@ -19,6 +18,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         if (savedInstanceState == null){
             FragmentStack.mainStack.push(MainActivityFragment())
 
