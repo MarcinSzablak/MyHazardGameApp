@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myhazardgameapp.fragments.MainActivityFragment
+import com.example.myhazardgameapp.fragments.toolsFragments.chohan.AddPlayer
+import com.example.myhazardgameapp.fragments.toolsFragments.chohan.ChohanCalculatorPlayersLists
 import com.example.myhazardgameapp.other.FragmentStack
 
 class MainActivity : AppCompatActivity() {
@@ -26,5 +28,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.main_fragment_container, MainActivityFragment())
                 .commit()
         }
+        ChohanCalculatorPlayersLists.choPlayers += AddPlayer()
+        ChohanCalculatorPlayersLists.hanPlayers += AddPlayer()
     }
 }

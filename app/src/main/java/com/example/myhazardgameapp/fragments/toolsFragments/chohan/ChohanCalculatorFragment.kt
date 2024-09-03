@@ -33,12 +33,10 @@ class ChohanCalculatorFragment: Fragment() {
         val hanList = view.findViewById<ListView>(R.id.han_list_view)
 
         // for testing
-//        for (i in 1..10){
+//        for (i in 1..5){
 //            ChohanCalculatorPlayersLists.choPlayers += (Player("Maciek", 2))
 //            ChohanCalculatorPlayersLists.hanPlayers += (Player("Kamil", 1))
 //        }
-//        ChohanCalculatorPlayersLists.choPlayers += AddPlayer("Maciek")
-//        ChohanCalculatorPlayersLists.hanPlayers += AddPlayer("Kamil")
 
         //Adding adapters to both lists
         choList.adapter = ChohanCalculatorListAdapter(requireActivity(),
@@ -48,9 +46,18 @@ class ChohanCalculatorFragment: Fragment() {
 
         val choPointsView = view.findViewById<TextView>(R.id.cho_points)
         val hanPointsView = view.findViewById<TextView>(R.id.han_points)
+        val pointsView = view.findViewById<TextView>(R.id.cho_han_points)
 
         ChohanCalculatorData.choPointsSum.observe(viewLifecycleOwner, Observer { count ->
             choPointsView.text = "${count}pt"
+        })
+
+        ChohanCalculatorData.hanPointsSum.observe(viewLifecycleOwner, Observer { count ->
+            hanPointsView.text = "${count}pt"
+        })
+
+        ChohanCalculatorData.pointsSum.observe(viewLifecycleOwner, Observer { count ->
+            pointsView.text = "${count}pt"
         })
 
         super.onViewCreated(view, savedInstanceState)

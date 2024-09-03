@@ -53,7 +53,6 @@ class BottomSheetSort : BottomSheetDialogFragment() {
                 adapter.sort { game, game2 -> game.compereAlfabetical(game, game2) }
             }
             if(chosenStatus == "Nazwa: Z-A"){
-                //yee it works just changing places of compered games
                 adapter.sort { game, game2 -> game.compereAlfabetical(game2, game) }
             }
             if(chosenStatus == "Więcej graczy"){

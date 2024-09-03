@@ -16,7 +16,7 @@
         android:focusable="true">
 
         <TextView
-            android:id="@+id/cho_han_pool"
+            android:id="@+id/cho_han_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pool: 0pt"
@@ -34,7 +34,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cho_han_pool"
+            app:layout_constraintTop_toBottomOf="@id/cho_han_points"
             app:layout_constraintBottom_toTopOf="@id/winner_buttons_container"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -111,7 +111,6 @@
                         android:textSize="16sp"
                         />
                 </LinearLayout>
-
 
                 <ListView
                     android:id="@+id/han_list_view"

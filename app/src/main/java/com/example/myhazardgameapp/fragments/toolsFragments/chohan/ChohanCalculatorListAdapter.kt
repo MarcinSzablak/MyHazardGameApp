@@ -1,16 +1,20 @@
 package com.example.myhazardgameapp.fragments.toolsFragments.chohan
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
+import com.example.myhazardgameapp.MainActivity
 import com.example.myhazardgameapp.R
 
 class ChohanCalculatorListAdapter(
     private val context: FragmentActivity,
-    private val players: Array<PlayersListElement>,
+    private val players: MutableList<PlayersListElement>,
     private val isThisCho: Boolean, //value to choose layout for list element
 ): ArrayAdapter<PlayersListElement>(context, R.layout.cho_han_list_view_red, players) {
 
@@ -37,7 +41,7 @@ class ChohanCalculatorListAdapter(
             }
 
             val playerNameView = rowView.findViewById<TextView>(R.id.player_name)
-            playerNameView.text = players[position].name
+            playerNameView.text = player.name
 
             val playerPointSView = rowView.findViewById<TextView>(R.id.player_points)
             playerPointSView.text = "${player.points}pt"
@@ -57,12 +61,24 @@ class ChohanCalculatorListAdapter(
                     R.layout.cho_han_add_player_red,
                     null, true
                 )
+
+                rowView.setOnClickListener {
+                    val showPopWindow = ChoHanPopWindow(true, this)
+                    showPopWindow.show(context.supportFragmentManager, "showPopUp")
+                }
+
             } else{
                 rowView = inflater.inflate(
                     R.layout.cho_han_add_player_blue,
                     null, true
                 )
+
+                rowView.setOnClickListener {
+                    val showPopWindow = ChoHanPopWindow(false, this)
+                    showPopWindow.show(context.supportFragmentManager, "showPopUp")
+                }
             }
+
             return rowView
         }
     }
