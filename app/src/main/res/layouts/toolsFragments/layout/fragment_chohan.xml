@@ -134,6 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
+                android:id="@+id/cho_winner_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="18dp"
@@ -146,6 +147,7 @@
                 android:textSize="26sp" />
 
             <TextView
+                android:id="@+id/han_winner_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

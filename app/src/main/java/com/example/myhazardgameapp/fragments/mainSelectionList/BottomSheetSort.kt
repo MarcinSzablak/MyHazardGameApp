@@ -49,17 +49,21 @@ class BottomSheetSort : BottomSheetDialogFragment() {
         }
 
         sortButton.setOnClickListener {
-            if(chosenStatus == "Nazwa: A-Z"){
-                adapter.sort { game, game2 -> game.compereAlfabetical(game, game2) }
-            }
-            if(chosenStatus == "Nazwa: Z-A"){
-                adapter.sort { game, game2 -> game.compereAlfabetical(game2, game) }
-            }
-            if(chosenStatus == "Więcej graczy"){
-                adapter.sort { game, game2 -> game.comperePlayers(game2, game) }
-            }
-            if(chosenStatus == "Mniej graczy"){
-                adapter.sort { game, game2 -> game.comperePlayers(game, game2) }
+            val adapter = this.adapter as GameListViewAdapter
+
+            when (chosenStatus) {
+                "Nazwa: A-Z" -> {
+                    adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game1, game2) }
+                }
+                "Nazwa: Z-A" -> {
+                    adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game2, game1) }
+                }
+                "Więcej graczy" -> {
+                    adapter.sortGames { game1, game2 -> game1.comperePlayers(game2, game1) }
+                }
+                "Mniej graczy" -> {
+                    adapter.sortGames { game1, game2 -> game1.comperePlayers(game1, game2) }
+                }
             }
 
             SortStatus.status = radioButton.text

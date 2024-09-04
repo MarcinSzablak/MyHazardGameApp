@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.MainActivity
 import com.example.myhazardgameapp.R
+import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
 
 class ChohanCalculatorListAdapter(
     private val context: FragmentActivity,
@@ -33,11 +36,23 @@ class ChohanCalculatorListAdapter(
                     R.layout.cho_han_list_view_red,
                     null, true
                 )
+                rowView.setOnLongClickListener {
+                    val bottomSheetDelete = ChoHanDeleteBottomSheet(player, this, true)
+                    bottomSheetDelete.show(context.supportFragmentManager, "ModalBottomSheet")
+                    this.notifyDataSetChanged()
+                    return@setOnLongClickListener true
+                }
             } else{
                 rowView = inflater.inflate(
                     R.layout.cho_han_list_view_blue,
                     null, true
                 )
+                rowView.setOnLongClickListener {
+                    val bottomSheetDelete = ChoHanDeleteBottomSheet(player, this, false)
+                    bottomSheetDelete.show(context.supportFragmentManager, "ModalBottomSheet")
+                    this.notifyDataSetChanged()
+                    return@setOnLongClickListener true
+                }
             }
 
             val playerNameView = rowView.findViewById<TextView>(R.id.player_name)

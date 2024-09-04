@@ -72,6 +72,11 @@ class GameListViewAdapter(
         return rowView
     }
 
+    fun sortGames(comparator: (Game, Game) -> Int) {
+        filteredGames = filteredGames.sortedWith(comparator).toTypedArray()
+        notifyDataSetChanged()
+    }
+
     private fun applyFilters() {
         filteredGames = filteredByTitle.intersect(filteredByPlayers.asIterable())
             .intersect(filteredByType.asIterable()).toTypedArray()

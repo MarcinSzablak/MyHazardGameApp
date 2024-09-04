@@ -17,6 +17,8 @@ object ChohanCalculatorData: ViewModel() {
 
     fun decrementChoPointsSum(value: Int){
         _choPointsSum.value = (_choPointsSum.value ?: 0) - value
+
+        _pointsSum.value = (_pointsSum.value ?: 0) - value
     }
 
     private val _hanPointsSum = MutableLiveData(0)
@@ -30,16 +32,11 @@ object ChohanCalculatorData: ViewModel() {
 
     fun decrementHanPointsSum(value: Int){
         _hanPointsSum.value = (_hanPointsSum.value ?: 0) - value
+
+        _pointsSum.value = (_pointsSum.value ?: 0) - value
     }
 
     private val _pointsSum = MutableLiveData(0)
     var pointsSum: LiveData<Int> = _pointsSum
 
-    fun incrementPointsSum(value: Int){
-        _pointsSum.value = (_pointsSum.value ?: 0) + value
-    }
-
-    fun decrementPointSum(value: Int){
-        _pointsSum.value = (_pointsSum.value ?: 0) - value
-    }
 }

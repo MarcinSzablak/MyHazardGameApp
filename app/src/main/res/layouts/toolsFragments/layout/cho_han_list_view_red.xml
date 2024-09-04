@@ -7,7 +7,9 @@
     android:padding="8dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:ignore="MissingConstraints, RtlCompat">
+    tools:ignore="MissingConstraints, RtlCompat"
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/player_name"
