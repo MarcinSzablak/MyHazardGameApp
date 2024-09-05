@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.other.FragmentStack
+import java.math.BigDecimal
 import java.math.RoundingMode
 import kotlin.math.roundToInt
 
@@ -66,17 +67,22 @@ class ChohanCalculatorFragment: Fragment() {
         val hanWinnerButton = view.findViewById<TextView>(R.id.han_winner_button)
 
         choWinnerButton.setOnClickListener {
-            val divider = ChohanCalculatorData.choPointsSum.value ?: 0
-            var playersPercentForPoints: ArrayList<Float> = arrayListOf()
-            if (divider != 0){
+            val pointsSum = ChohanCalculatorData.pointsSum.value ?: 0
+            val choPointsSum = ChohanCalculatorData.choPointsSum.value ?: 0
+            var winningPlayersPoints: ArrayList<BigDecimal> = arrayListOf()
+            if (choPointsSum != 0){
                 ChohanCalculatorPlayersLists.choPlayers.forEach { player ->
-                    Log.v("test1", "${(player.points.toFloat() / divider).toBigDecimal().setScale(2, RoundingMode.UP).toFloat()}")
-                    playersPercentForPoints.add(
-                        (player.points.toFloat() / divider)
-                        .toBigDecimal()
-                        .setScale(2, RoundingMode.UP)
-                        .toFloat())
+                    winningPlayersPoints.add(
+                        (player.points.toFloat() / choPointsSum * pointsSum)
+                            .toBigDecimal().setScale(0, RoundingMode.HALF_EVEN) )
                 }
+                var checkSum: Long = 0
+
+                winningPlayersPoints.forEach { points ->
+                    checkSum += points.toLong()
+                    Log.v("test1", "$points")
+                }
+
             }
             return@setOnClickListener
         }
