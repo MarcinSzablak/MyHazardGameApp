@@ -17,7 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.fragments.mainSelectionList.BottomSheetFiltr
+import com.example.myhazardgameapp.fragments.mainSelectionList.FiltrStatus
 import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.fragments.mainSelectionList.SortStatus
+import com.example.myhazardgameapp.fragments.mainSelectionList.filtrGameListAdapter
+import com.example.myhazardgameapp.fragments.mainSelectionList.sortGameListAdapter
 import com.example.myhazardgameapp.other.FragmentStack
 import com.example.myhazardgameapp.other.gamesFiles.GamesList
 
@@ -50,7 +54,13 @@ class MainActivityFragment : Fragment() {
 
         val gameListViewAdapter = GameListViewAdapter(requireActivity() , gameList)
         gameListView.adapter = gameListViewAdapter
-        gameListViewAdapter.sort { item1, item2 -> item1.compereAlfabetical(item1, item2) }
+
+        filtrGameListAdapter(
+            FiltrStatus.playerNumberMin,
+            FiltrStatus.playerNumberMax,
+            FiltrStatus.type,
+            gameListViewAdapter
+        )
 
         searchView.doOnTextChanged { text, _, before, _ ->
             gameListViewAdapter.getFilterByTitle(before).filter(text)

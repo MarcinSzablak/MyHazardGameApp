@@ -1,4 +1,5 @@
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +11,13 @@ import com.example.myhazardgameapp.R
 import com.example.myhazardgameapp.other.gamesFiles.Game
 import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
 import com.example.myhazardgameapp.fragments.mainSelectionList.SortStatus
+import com.example.myhazardgameapp.fragments.mainSelectionList.sortGameListAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
 class BottomSheetSort : BottomSheetDialogFragment() {
-    lateinit var adapter: ArrayAdapter<Game>
-    lateinit var chosenStatus: String
+    private lateinit var adapter: ArrayAdapter<Game>
+    private lateinit var chosenStatus: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,22 +51,14 @@ class BottomSheetSort : BottomSheetDialogFragment() {
         }
 
         sortButton.setOnClickListener {
+            if (SortStatus.status == radioButton.text || SortStatus.id == radioButton.id){
+                dismiss()
+                return@setOnClickListener
+            }
+
             val adapter = this.adapter as GameListViewAdapter
 
-            when (chosenStatus) {
-                "Nazwa: A-Z" -> {
-                    adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game1, game2) }
-                }
-                "Nazwa: Z-A" -> {
-                    adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game2, game1) }
-                }
-                "Więcej graczy" -> {
-                    adapter.sortGames { game1, game2 -> game1.comperePlayers(game2, game1) }
-                }
-                "Mniej graczy" -> {
-                    adapter.sortGames { game1, game2 -> game1.comperePlayers(game1, game2) }
-                }
-            }
+            sortGameListAdapter(chosenStatus, adapter)
 
             SortStatus.status = radioButton.text
             SortStatus.id = radioButton.id

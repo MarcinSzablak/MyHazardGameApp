@@ -33,5 +33,6 @@ class GameSelectedListFragment : Fragment() {
 
         listView.adapter = SelectedGameListAdapter(requireActivity(),
             SelectedGameChangeSupport.SelectedGame.toolsArray)
+
     }
 }
