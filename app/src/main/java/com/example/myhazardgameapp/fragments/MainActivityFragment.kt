@@ -23,6 +23,7 @@ import com.example.myhazardgameapp.fragments.mainSelectionList.SortStatus
 import com.example.myhazardgameapp.fragments.mainSelectionList.filtrGameListAdapter
 import com.example.myhazardgameapp.fragments.mainSelectionList.sortGameListAdapter
 import com.example.myhazardgameapp.other.FragmentStack
+import com.example.myhazardgameapp.other.buttonAnimation
 import com.example.myhazardgameapp.other.gamesFiles.GamesList
 
 
@@ -83,14 +84,7 @@ class MainActivityFragment : Fragment() {
         }
 
         settingsButton.setOnClickListener {
-            val buttonClick = ScaleAnimation(
-                1f, 0.7f,
-                1f, 0.7f,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-            )
-            buttonClick.duration = 100
-            settingsButton.startAnimation(buttonClick)
+            buttonAnimation(it)
 
             val fragmentTransaction = fragmentManager?.beginTransaction()
             fragmentTransaction?.setCustomAnimations(

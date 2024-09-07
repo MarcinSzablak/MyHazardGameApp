@@ -15,6 +15,7 @@ import com.example.myhazardgameapp.fragments.GameSelectedFragment
 import com.example.myhazardgameapp.other.AppToast
 import com.example.myhazardgameapp.fragments.gameSelectedList.SelectedGameChangeSupport
 import com.example.myhazardgameapp.other.FragmentStack
+import com.example.myhazardgameapp.other.buttonAnimation
 import com.example.myhazardgameapp.other.gamesFiles.Game
 
 class GameListViewAdapter(
@@ -45,14 +46,7 @@ class GameListViewAdapter(
         val game = filteredGames[position]
 
         rowView.setOnClickListener {
-            val buttonClick = ScaleAnimation(
-                1f, 0.9f,
-                1f, 0.9f,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-            )
-            buttonClick.duration = 200
-            rowView.startAnimation(buttonClick)
+            buttonAnimation(it)
 
             SelectedGameChangeSupport.SelectedGame = game
 

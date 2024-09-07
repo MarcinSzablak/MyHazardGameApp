@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_green_100"
+    android:padding="20dp"
+    tools:ignore="UselessParent"
+    tools:context=".fragments.toolsFragments.chohan.ChohanShowWinnersPopWindow">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ListView
+            android:id="@+id/cho_han_show_winners_pop_up_list_view"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:divider="@drawable/listview_divider"
+            android:dividerHeight="5dp"
+            />
+
+        <TextView
+            android:id="@+id/cho_han_show_winners_pop_up_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_50"
+            android:padding="10dp"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:text="reset"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</FrameLayout>

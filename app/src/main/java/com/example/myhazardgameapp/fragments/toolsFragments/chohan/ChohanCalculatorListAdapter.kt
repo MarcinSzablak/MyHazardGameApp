@@ -1,19 +1,13 @@
 package com.example.myhazardgameapp.fragments.toolsFragments.chohan
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
-import com.example.myhazardgameapp.MainActivity
 import com.example.myhazardgameapp.R
-import com.example.myhazardgameapp.fragments.mainSelectionList.GameListViewAdapter
+import com.example.myhazardgameapp.other.buttonAnimation
 
 class ChohanCalculatorListAdapter(
     private val context: FragmentActivity,
@@ -37,7 +31,7 @@ class ChohanCalculatorListAdapter(
                     null, true
                 )
                 rowView.setOnLongClickListener {
-                    val bottomSheetDelete = ChoHanDeleteBottomSheet(player, this, true)
+                    val bottomSheetDelete = ChohanDeleteBottomSheet(player, this, true)
                     bottomSheetDelete.show(context.supportFragmentManager, "ModalBottomSheet")
                     this.notifyDataSetChanged()
                     return@setOnLongClickListener true
@@ -48,7 +42,7 @@ class ChohanCalculatorListAdapter(
                     null, true
                 )
                 rowView.setOnLongClickListener {
-                    val bottomSheetDelete = ChoHanDeleteBottomSheet(player, this, false)
+                    val bottomSheetDelete = ChohanDeleteBottomSheet(player, this, false)
                     bottomSheetDelete.show(context.supportFragmentManager, "ModalBottomSheet")
                     this.notifyDataSetChanged()
                     return@setOnLongClickListener true
@@ -63,6 +57,7 @@ class ChohanCalculatorListAdapter(
 
             //adding animation when text is bigger then textView
             rowView.setOnClickListener {
+                buttonAnimation(it)
                 playerNameView.isSelected = !playerNameView.isSelected
                 playerPointSView.isSelected = !playerPointSView.isSelected
             }
@@ -78,7 +73,10 @@ class ChohanCalculatorListAdapter(
                 )
 
                 rowView.setOnClickListener {
-                    val showPopWindow = ChoHanPopWindow(true, this)
+
+                    buttonAnimation(it)
+
+                    val showPopWindow = ChohanAddPlayerPopWindow(true, this)
                     showPopWindow.show(context.supportFragmentManager, "showPopUp")
                 }
 
@@ -89,7 +87,10 @@ class ChohanCalculatorListAdapter(
                 )
 
                 rowView.setOnClickListener {
-                    val showPopWindow = ChoHanPopWindow(false, this)
+
+                    buttonAnimation(it)
+
+                    val showPopWindow = ChohanAddPlayerPopWindow(false, this)
                     showPopWindow.show(context.supportFragmentManager, "showPopUp")
                 }
             }

@@ -6,7 +6,7 @@
     android:background="@drawable/border_green_100"
     android:padding="20dp"
     tools:ignore="UselessParent"
-    tools:context=".fragments.toolsFragments.chohan.ChoHanPopWindow">
+    tools:context=".fragments.toolsFragments.chohan.ChohanAddPlayerPopWindow">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/black"/>
                 <EditText
-                    android:id="@+id/cho_han_pop_up_name"
+                    android:id="@+id/cho_han_pop_up_add_player_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="name"
@@ -56,7 +56,7 @@
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/black"/>
                 <EditText
-                    android:id="@+id/cho_han_pop_up_points"
+                    android:id="@+id/cho_han_pop_up_add_player_points"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="points"
@@ -69,7 +69,7 @@
             </LinearLayout>
         </LinearLayout>
         <TextView
-            android:id="@+id/cho_han_pop_up_button"
+            android:id="@+id/cho_han_pop_up_add_player_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_50"

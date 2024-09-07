@@ -9,7 +9,7 @@ import com.example.myhazardgameapp.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class ChoHanDeleteBottomSheet(
+class ChohanDeleteBottomSheet(
     val player: Player,
     val adapter: ChohanCalculatorListAdapter,
     val isCho: Boolean

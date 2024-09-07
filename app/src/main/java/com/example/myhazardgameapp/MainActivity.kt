@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.main_fragment_container, MainActivityFragment())
                 .commit()
         }
-        ChohanCalculatorPlayersLists.choPlayers += AddPlayer()
-        ChohanCalculatorPlayersLists.hanPlayers += AddPlayer()
+
+        ChohanCalculatorPlayersLists.resetPlayers()
     }
 }
