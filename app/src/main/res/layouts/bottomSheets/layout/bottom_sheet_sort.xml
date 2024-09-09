@@ -1,78 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/border_green_bottom_100"
     android:gravity="start"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/border_green_bottom_100">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sortuj"
-        android:textSize="30sp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/sort"
         android:textColor="@color/black"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="30sp" />
 
     <RadioGroup
         android:id="@+id/bottom_sheet_sort_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_30"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/border_30"
         android:padding="5dp">
 
         <RadioButton
             android:id="@+id/bottom_sheet_sort_radio_alfabetical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nazwa: A-Z"
-            android:textColor="@color/black"
-            android:theme="@style/MyRadioButton"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:checked="true"
-            />
+            android:text="@string/name_a_z"
+            android:textColor="@color/black"
+            android:theme="@style/MyRadioButton" />
 
         <RadioButton
             android:id="@+id/bottom_sheet_sort_radio_not_alfabetical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nazwa: Z-A"
+            android:layout_marginBottom="5dp"
+            android:text="@string/name_z_a"
             android:textColor="@color/black"
-            android:theme="@style/MyRadioButton"
-            android:layout_marginBottom="5dp"/>
+            android:theme="@style/MyRadioButton" />
 
         <RadioButton
             android:id="@+id/bottom_sheet_sort_radio_more_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Więcej graczy"
+            android:layout_marginBottom="5dp"
+            android:text="@string/more_players"
             android:textColor="@color/black"
-            android:theme="@style/MyRadioButton"
-            android:layout_marginBottom="5dp"/>
+            android:theme="@style/MyRadioButton" />
 
         <RadioButton
             android:id="@+id/bottom_sheet_radio_less_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mniej graczy"
+            android:layout_marginBottom="5dp"
+            android:text="@string/less_players"
             android:textColor="@color/black"
-            android:theme="@style/MyRadioButton"
-            android:layout_marginBottom="5dp"/>
+            android:theme="@style/MyRadioButton" />
 
     </RadioGroup>
+
     <TextView
         android:id="@+id/bottom_sheet_sort_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sortuj"
         android:background="@drawable/border_50"
-        android:padding="10dp"
         android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:padding="10dp"
+        android:text="@string/sort"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 </LinearLayout>

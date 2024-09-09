@@ -5,16 +5,16 @@ fun sortGameListAdapter(
     adapter: GameListViewAdapter
 ) {
     when (chosenStatus) {
-        "Nazwa: A-Z" -> {
+        "Name: A-Z" -> {
             adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game1, game2) }
         }
-        "Nazwa: Z-A" -> {
+        "Name: Z-A" -> {
             adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game2, game1) }
         }
-        "Więcej graczy" -> {
+        "More players" -> {
             adapter.sortGames { game1, game2 -> game1.comperePlayers(game2, game1) }
         }
-        "Mniej graczy" -> {
+        "Less players" -> {
             adapter.sortGames { game1, game2 -> game1.comperePlayers(game1, game2) }
         }
     }

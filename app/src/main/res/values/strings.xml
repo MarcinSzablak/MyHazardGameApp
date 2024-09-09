@@ -2,4 +2,40 @@
     <string name="app_name">MyHazardGameApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cho_han_how_to_play_preparation_text">
+        \tTo play Cho-han you need:
+        \n\t\t• Two standard six-sided dice,
+        \n\t\t• A cup or bowl to shake and conceal the dice,
+        \n\t\t• A person to act as the "dealer" who rolls the dice,
+        \n\t\t• Players who will place bets
+    </string>
+    <string name="cho_han_how_to_play_how_to_play_text">
+        \tThe dealer takes two dice and places them inside a cup or bowl.
+        \nAfter that dealer shake the cup with dice inside and then places the cup down.
+        \n
+        \n\tPlayers place their bets on cho or han:
+        \n\t\t• Cho (even) - 2, 4, 6, 8, 10, 12
+        \n\t\t• Han (odd) - 3, 5, 7, 9, 11
+        \n
+        \n\tDealer reveals dices, and sum is calculated
+    </string>
+    <string name="cho_han_how_to_play_variations_text">
+        \t• Multiple Betting Rounds: Sometimes,
+        players can place side bets or bet against each other.
+        \n\t• House Dealer: In organized gambling,
+        the dealer may collect a fee or portion of winnings for acting as the house.
+        Players can play against the house.
+    </string>
+    <string name="search">Search</string>
+    <string name="filters">Filters</string>
+    <string name="sort">Sort</string>
+    <string name="plyers_number">Plyers number:</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="type">Type:</string>
+    <string name="filter">Filter</string>
+    <string name="name_a_z">Name: A-Z</string>
+    <string name="name_z_a">Name: Z-A</string>
+    <string name="more_players">More players</string>
+    <string name="less_players">Less players</string>
 </resources>

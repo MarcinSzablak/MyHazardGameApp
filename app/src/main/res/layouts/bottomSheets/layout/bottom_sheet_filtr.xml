@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Filtry"
+        android:text="@string/filters"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:layout_marginBottom="10dp"/>
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ilość graczy:"
+            android:text="@string/plyers_number"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginBottom="5dp"/>
@@ -37,9 +37,9 @@
                 android:id="@+id/bottom_sheet_filter_min"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Od"
+                android:hint="@string/from"
                 android:textColorHint="@color/black50"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:background="@drawable/border_50"
                 android:inputType="number"
                 android:textSize="20sp"
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/black"/>
@@ -59,8 +59,8 @@
                 android:id="@+id/bottom_sheet_filter_max"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Do"
-                android:padding="10dp"
+                android:hint="@string/to"
+                android:padding="12dp"
                 android:background="@drawable/border_50"
                 android:inputType="number"
                 android:textSize="20sp"
@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rodzaj:"
+            android:text="@string/type"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginBottom="5dp"/>
@@ -90,7 +90,7 @@
         android:id="@+id/bottom_sheet_filtr_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="filtruj"
+        android:text="@string/filter"
         android:background="@drawable/border_50"
         android:padding="10dp"
         android:gravity="center"

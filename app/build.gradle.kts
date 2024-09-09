@@ -50,6 +50,8 @@ android {
                     "src\\main\\res\\drawables\\borders",
                     "src\\main\\res",
                     "src\\main\\res\\layouts\\toolsFragments",
+                    "src\\main\\res",
+                    "src\\main\\res\\layouts\\toolsFragments\\ChoHanFragments",
                 )
             }
         }
