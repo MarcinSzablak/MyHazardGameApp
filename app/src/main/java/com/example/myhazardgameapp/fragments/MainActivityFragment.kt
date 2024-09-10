@@ -45,7 +45,7 @@ class MainActivityFragment : Fragment() {
 
         FragmentStack.gameSelectedStack.push(GameSelectedListFragment())
 
-        val gameList = GamesList.games
+        val gameList = GamesList.getGames(requireContext())
 
         val gameListView = view.findViewById<ListView>(R.id.main_fragment_game_select_list)
         val searchView = view.findViewById<EditText>(R.id.main_fragment_search_bar)

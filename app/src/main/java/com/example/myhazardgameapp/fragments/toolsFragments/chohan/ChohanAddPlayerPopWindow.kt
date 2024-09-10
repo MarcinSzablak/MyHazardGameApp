@@ -51,7 +51,7 @@ class ChohanAddPlayerPopWindow(
             buttonAnimation(it)
 
             if (name == "" || points <= 0){
-                Toast.makeText(context, "incorrect data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context?.getString(R.string.incorrect_data), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (isCho){

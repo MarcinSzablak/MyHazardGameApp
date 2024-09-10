@@ -1,20 +1,24 @@
 package com.example.myhazardgameapp.fragments.mainSelectionList
 
+import android.content.Context
+import com.example.myhazardgameapp.R
+
 fun sortGameListAdapter(
     chosenStatus: CharSequence,
-    adapter: GameListViewAdapter
+    adapter: GameListViewAdapter,
+    context: Context
 ) {
     when (chosenStatus) {
-        "Name: A-Z" -> {
+        context.getString(R.string.name_a_z) -> {
             adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game1, game2) }
         }
-        "Name: Z-A" -> {
+        context.getString(R.string.name_z_a) -> {
             adapter.sortGames { game1, game2 -> game1.compereAlfabetical(game2, game1) }
         }
-        "More players" -> {
+        context.getString(R.string.more_players) -> {
             adapter.sortGames { game1, game2 -> game1.comperePlayers(game2, game1) }
         }
-        "Less players" -> {
+        context.getString(R.string.less_players) -> {
             adapter.sortGames { game1, game2 -> game1.comperePlayers(game1, game2) }
         }
     }

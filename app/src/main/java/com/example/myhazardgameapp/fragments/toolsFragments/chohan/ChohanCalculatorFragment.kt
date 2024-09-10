@@ -40,15 +40,20 @@ class ChohanCalculatorFragment: Fragment() {
         val hanListView = view.findViewById<ListView>(R.id.han_list_view)
 
         //Adding adapters to both lists
-        choListView.adapter = ChohanCalculatorListAdapter(requireActivity(),
-            ChohanCalculatorPlayersLists.choPlayers, true)
-        hanListView.adapter = ChohanCalculatorListAdapter(requireActivity(),
-            ChohanCalculatorPlayersLists.hanPlayers, false)
+        choListView.adapter = ChohanCalculatorListAdapter(
+            requireActivity(),
+            ChohanCalculatorPlayersLists.choPlayers, true
+        )
+        hanListView.adapter = ChohanCalculatorListAdapter(
+            requireActivity(),
+            ChohanCalculatorPlayersLists.hanPlayers, false
+        )
 
         //counting points
         val choPointsView = view.findViewById<TextView>(R.id.cho_points)
         val hanPointsView = view.findViewById<TextView>(R.id.han_points)
         val pointsView = view.findViewById<TextView>(R.id.cho_han_points)
+
 
         ChohanCalculatorData.choPointsSum.observe(viewLifecycleOwner, Observer { count ->
             choPointsView.text = "${count}pt"
@@ -58,65 +63,61 @@ class ChohanCalculatorFragment: Fragment() {
             hanPointsView.text = "${count}pt"
         })
 
+        val pointsString = requireContext().getString(R.string.points)
+
         ChohanCalculatorData.pointsSum.observe(viewLifecycleOwner, Observer { count ->
-            pointsView.text = "Points: ${count}pt"
+            pointsView.text = "$pointsString: ${count}pt"
         })
 
-        //to calculate every thing
+        //to calculate everything
         val choWinnerButton = view.findViewById<TextView>(R.id.cho_winner_button)
         val hanWinnerButton = view.findViewById<TextView>(R.id.han_winner_button)
 
-        choWinnerButton.setOnClickListener {
+        fun handleWinnerButtonClick(
+            buttonView: View,
+            pointsSum: Long?,
+            choListView: ListView,
+            hanListView: ListView,
+            isCho: Boolean
+        ) {
+            buttonAnimation(buttonView)
 
-            buttonAnimation(it)
-
-            val choPointsSum = ChohanCalculatorData.choPointsSum.value ?: 0
-            var winningPlayersPoints: ArrayList<BigDecimal> = arrayListOf()
-
-            if (choPointsSum != 0L){
-                winningPlayersPoints = calculatePointsForWinners(choPointsSum)
-            }else{
-                AppToast.showToast(context, "Add players")
-                return@setOnClickListener
+            val sumPoints = pointsSum ?: 0
+            val winningPlayersPoints: ArrayList<BigDecimal> = if (sumPoints != 0L) {
+                calculatePointsForWinners(sumPoints)
+            } else {
+                AppToast.showToast(context, context?.getString(R.string.add_player))
+                return
             }
 
             val showPopWindow = ChohanShowWinnersPopWindow(
                 choListView = choListView,
                 hanListView = hanListView,
                 winningPlayersPoints = winningPlayersPoints,
-                isThisCho = true,
+                isThisCho = isCho
             )
-            showPopWindow.show(FragmentManager.findFragmentManager(view), "showPopUp")
+            showPopWindow.show(FragmentManager.findFragmentManager(buttonView), "showPopUp")
+        }
 
-            return@setOnClickListener
+        choWinnerButton.setOnClickListener {
+            handleWinnerButtonClick(
+                buttonView = it,
+                pointsSum = ChohanCalculatorData.choPointsSum.value,
+                choListView = choListView,
+                hanListView = hanListView,
+                isCho = true
+            )
         }
 
         hanWinnerButton.setOnClickListener {
-
-            buttonAnimation(it)
-
-            val hanPointsSum = ChohanCalculatorData.hanPointsSum.value ?: 0
-            var winningPlayersPoints: ArrayList<BigDecimal> = arrayListOf()
-
-            if (hanPointsSum != 0L){
-                winningPlayersPoints = calculatePointsForWinners(hanPointsSum)
-            }else{
-                AppToast.showToast(context, "Add players")
-                return@setOnClickListener
-            }
-
-            val showPopWindow = ChohanShowWinnersPopWindow(
+            handleWinnerButtonClick(
+                buttonView = it,
+                pointsSum = ChohanCalculatorData.hanPointsSum.value,
                 choListView = choListView,
                 hanListView = hanListView,
-                winningPlayersPoints = winningPlayersPoints,
-                isThisCho = false,
+                isCho = false
             )
-            showPopWindow.show(FragmentManager.findFragmentManager(view), "showPopUp")
-
-            return@setOnClickListener
         }
-
-        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun calculatePointsForWinners(

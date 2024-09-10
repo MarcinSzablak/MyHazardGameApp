@@ -1,7 +1,36 @@
 <resources>
     <string name="app_name">MyHazardGameApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search">Search</string>
+    <string name="filters">Filters</string>
+    <string name="sort">Sort</string>
+    <string name="plyers_number">Plyers number:</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="type">Type:</string>
+    <string name="filter">Filter</string>
+    <string name="name_a_z">Name: A-Z</string>
+    <string name="name_z_a">Name: Z-A</string>
+    <string name="more_players">More players</string>
+    <string name="less_players">Less players</string>
+
+    <string name="no_results_found">No results found</string>
+
+    <string name="settings">Settings</string>
+
+    <string name="poker">Poker</string>
+    <string name="solitaire">Solitaire</string>
+    <string name="mahjong">Mahjong</string>
+    <string name="cho_han">Cho-han</string>
+
+    <string name="how_to_play">How to play</string>
+    <string name="calculator">Calculator</string>
+
+    <string name="how_to_play_cho_han">How to play Cho-han?</string>
+    <string name="_1_preparation">1. Preparation:</string>
+    <string name="_2_how_to_play">2. How to play:</string>
+    <string name="_3_variations">3. Variations:</string>
     <string name="cho_han_how_to_play_preparation_text">
         \tTo play Cho-han you need:
         \n\t\t• Two standard six-sided dice,
@@ -17,7 +46,8 @@
         \n\t\t• Cho (even) - 2, 4, 6, 8, 10, 12
         \n\t\t• Han (odd) - 3, 5, 7, 9, 11
         \n
-        \n\tDealer reveals dices, and sum is calculated
+        \n\tDealer reveals dices, and sum is calculated.
+        \n\tWinners get they prizes and next round can be played.
     </string>
     <string name="cho_han_how_to_play_variations_text">
         \t• Multiple Betting Rounds: Sometimes,
@@ -26,16 +56,16 @@
         the dealer may collect a fee or portion of winnings for acting as the house.
         Players can play against the house.
     </string>
-    <string name="search">Search</string>
-    <string name="filters">Filters</string>
-    <string name="sort">Sort</string>
-    <string name="plyers_number">Plyers number:</string>
-    <string name="from">from</string>
-    <string name="to">to</string>
-    <string name="type">Type:</string>
-    <string name="filter">Filter</string>
-    <string name="name_a_z">Name: A-Z</string>
-    <string name="name_z_a">Name: Z-A</string>
-    <string name="more_players">More players</string>
-    <string name="less_players">Less players</string>
+
+    <string name="points">Points</string>
+    <string name="winners_cho">Winners cho</string>
+    <string name="winners_han">Winners han</string>
+    <string name="add_player">Add player</string>
+    <string name="player_name">Player Name:</string>
+    <string name="name">name</string>
+    <string name="player_points">Player Points:</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">reset</string>
+    <string name="incorrect_data">incorrect data</string>
 </resources>

@@ -58,7 +58,7 @@ class BottomSheetSort : BottomSheetDialogFragment() {
 
             val adapter = this.adapter as GameListViewAdapter
 
-            sortGameListAdapter(chosenStatus, adapter)
+            sortGameListAdapter(chosenStatus, adapter, requireContext())
 
             SortStatus.status = radioButton.text
             SortStatus.id = radioButton.id

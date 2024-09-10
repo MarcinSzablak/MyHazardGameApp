@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentActivity
 import com.example.myhazardgameapp.R
 import java.math.BigDecimal
 
 class ChohanShowWinnersPopWindow(
-    val choListView: ListView,
-    val hanListView: ListView,
-    val winningPlayersPoints: ArrayList<BigDecimal>,
-    val isThisCho: Boolean,
+    private val choListView: ListView,
+    private val hanListView: ListView,
+    private val winningPlayersPoints: ArrayList<BigDecimal>,
+    private val isThisCho: Boolean,
 ): DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,7 @@ class ChohanShowWinnersPopWindow(
 
         val winnersList = view.findViewById<ListView>(R.id.cho_han_show_winners_pop_up_list_view)
         winnersList.adapter = ChohanShowWinnersPopUpListAdapter(
-            context = requireActivity(),
+            context = requireContext() as FragmentActivity,
             winningPlayersPoints = winningPlayersPoints,
             isThisCho = isThisCho)
 

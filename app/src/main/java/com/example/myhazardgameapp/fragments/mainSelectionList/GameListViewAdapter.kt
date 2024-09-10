@@ -31,7 +31,7 @@ class GameListViewAdapter(
     @SuppressLint("ViewHolder", "InflateParams")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        sortGameListAdapter(SortStatus.status, this)
+        sortGameListAdapter(SortStatus.status, this, context)
 
         val inflater = context.layoutInflater
         val rowView = inflater.inflate(
@@ -79,7 +79,7 @@ class GameListViewAdapter(
             .intersect(filteredByType.asIterable().toSet()).toTypedArray()
 
         if (filteredGames.isEmpty()) {
-            AppToast.showToast(context, "No results found")
+            AppToast.showToast(context, context.getString(R.string.no_results_found))
         }
 
         notifyDataSetChanged()

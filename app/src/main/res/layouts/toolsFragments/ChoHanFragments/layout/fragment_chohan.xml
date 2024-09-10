@@ -19,7 +19,7 @@
             android:id="@+id/cho_han_points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pool: 0pt"
+            android:text="@string/points"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="26sp"
@@ -141,7 +141,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/border_red_70"
                 android:padding="10dp"
-                android:text="Winner cho"
+                android:text="@string/winners_cho"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="26sp" />
@@ -153,7 +153,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/border_blue_70"
                 android:padding="10dp"
-                android:text="Winner han"
+                android:text="@string/winners_han"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="26sp" />

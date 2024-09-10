@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyHazardGameApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search">Szukaj</string>
+    <string name="filters">Filtry</string>
+    <string name="sort">Sortuj</string>
+    <string name="plyers_number">Liczba graczy:</string>
+    <string name="from">od</string>
+    <string name="to">do</string>
+    <string name="type">Rodzaj:</string>
+    <string name="filter">Filtryuj</string>
+    <string name="name_a_z">Nazwa: A-Z</string>
+    <string name="name_z_a">Nazwa: Z-A</string>
+    <string name="more_players">Więcej graczy</string>
+    <string name="less_players">Mniej graczy</string>
+
+    <string name="no_results_found">Nie znaleziono wyników</string>
+
+    <string name="settings">Ustawienia</string>
+
+    <string name="poker">Poker</string>
+    <string name="solitaire">Pasjans</string>
+    <string name="mahjong">Madżong</string>
+    <string name="cho_han">Cho-han</string>
+
+    <string name="how_to_play">Jak grać</string>
+    <string name="calculator">Kalkulator</string>
+
+    <string name="how_to_play_cho_han">Jak grać w Cho-han?</string>
+    <string name="_1_preparation">1. Przygotowanie:</string>
+    <string name="_2_how_to_play">2. Jak Grać?:</string>
+    <string name="_3_variations">3. Wariacje:</string>
+    <string name="cho_han_how_to_play_preparation_text">
+        \tBy zagrać w Cho-han potrzebujesz:
+        \n\t\t• Dwóch standardowych sześciościennych kostek,
+        \n\t\t• Kubka lub miski do potrząsania i zakrycia kostek,
+        \n\t\t• Osoby, która będzie pełnić rolę "dealera" i rzucać kostkami,
+        \n\t\t• Graczy, którzy będą obstawiać
+    </string>
+    <string name="cho_han_how_to_play_how_to_play_text">
+        \tDealer bierze dwie kostki i umieszcza je w kubku lub misce.
+        \nNastępnie dealer potrząsa kubkiem z kostkami w środku, a potem odkłada kubek.
+        \n
+        \n\tGracze obstawiają zakłady na cho lub han:
+        \n\t\t• Cho (parzyste) - 2, 4, 6, 8, 10, 12
+        \n\t\t• Han (nieparzyste) - 3, 5, 7, 9, 11
+        \n
+        \n\tDealer odsłania kostki i sumuje ich wartości.
+        \n\tZwycięzcy otrzymują swoje nagrody i można rozpocząć następną rundę.
+        \n\t
+    </string>
+    <string name="cho_han_how_to_play_variations_text">
+        \t• Wiele rund obstawiania: Czasami gracze mogą zawierać
+        zakłady dodatkowe lub obstawiać przeciwko sobie.
+        \n\t• Dealer kasyna: W zorganizowanej grze hazardowej dealer
+        może pobierać opłatę lub część wygranych za pełnienie roli domu.
+        Gracze mogą grać przeciwko kasynu.
+    </string>
+
+    <string name="points">Punkty</string>
+    <string name="winners_cho">Zwycięzcy cho</string>
+    <string name="winners_han">Zwycięzcy han</string>
+    <string name="add_player">Dodaj gracza</string>
+    <string name="player_name">Imie gracza:</string>
+    <string name="name">imie</string>
+    <string name="player_points">Punkty gracza:</string>
+    <string name="delete">Usuń</string>
+    <string name="cancel">Anuluj</string>
+    <string name="reset">reset</string>
+    <string name="incorrect_data">nie poprawne dane</string>
+</resources>

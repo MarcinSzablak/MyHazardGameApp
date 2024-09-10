@@ -17,6 +17,6 @@
             app:titleCentered="true"
             android:background="@color/green"
             app:titleTextColor="@color/black"
-            app:title="Settings"/>
+            app:title="@string/settings"/>
     </com.google.android.material.appbar.AppBarLayout>
 </FrameLayout>

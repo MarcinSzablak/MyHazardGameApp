@@ -26,14 +26,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Player Name:"
+                    android:text="@string/player_name"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/cho_han_pop_up_add_player_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="name"
+                    android:hint="@string/name"
                     android:textColorHint="@color/black50"
                     android:textColor="@color/black"
                     android:background="@drawable/border_50"
@@ -52,14 +52,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Player Points:"
+                    android:text="@string/player_points"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/black"/>
                 <EditText
                     android:id="@+id/cho_han_pop_up_add_player_points"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="points"
+                    android:hint="@string/points"
                     android:textColorHint="@color/black50"
                     android:textColor="@color/black"
                     android:background="@drawable/border_50"
@@ -77,7 +77,7 @@
             android:textSize="26sp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:text="Add Player"
+            android:text="@string/add_player"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
 

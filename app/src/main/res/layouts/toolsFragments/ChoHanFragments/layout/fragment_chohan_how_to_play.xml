@@ -16,13 +16,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="How to Play Cho-han?"
+            android:text="@string/how_to_play_cho_han"
             android:textColor="@color/black"
             android:textSize="24sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1. Preparation:"
+            android:text="@string/_1_preparation"
             android:textColor="@color/black"
             android:textSize="20sp"/>
         <TextView
@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2. How to play:"
+            android:text="@string/_2_how_to_play"
             android:textColor="@color/black"
             android:textSize="20sp"/>
         <TextView
@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3. Variations:"
+            android:text="@string/_3_variations"
             android:textColor="@color/black"
             android:textSize="20sp"/>
         <TextView
